@@ -1,4 +1,4 @@
-package com.moonrider;
+package com.moonrider.common;
 
 import java.sql.SQLException;
 
