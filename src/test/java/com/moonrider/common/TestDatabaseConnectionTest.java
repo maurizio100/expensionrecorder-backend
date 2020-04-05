@@ -1,7 +1,7 @@
 package com.moonrider.common;
 
-import java.sql.SQLException;
 
+import java.sql.SQLException;
 import javax.inject.Inject;
 
 import org.junit.jupiter.api.Test;
