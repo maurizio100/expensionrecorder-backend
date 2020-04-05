@@ -21,7 +21,7 @@ public class ExpenseDAO {
 		this.em = em;
 	}
 	
-	public List<ExpenseDTO> listExpenses() {
+	public List<ExpenseDTO> getExpenses() {
 		ExpenseFactory expenseFactory = new ExpenseFactory();
 		
 		List<Expense> expenses = em.createQuery("Select e FROM Expense e", Expense.class).getResultList();

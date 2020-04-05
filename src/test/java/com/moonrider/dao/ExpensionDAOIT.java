@@ -24,7 +24,7 @@ public class ExpensionDAOIT {
 	
 	@Test
 	public void listExpenses_shouldReturn_expenses() {
-		List<ExpenseDTO> result = expenseDAO.listExpenses();
+		List<ExpenseDTO> result = expenseDAO.getExpenses();
 		
 		assertThat(result, notNullValue());
 		assertThat(result.size(), greaterThan(0));
