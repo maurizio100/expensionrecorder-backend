@@ -7,24 +7,25 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
+import com.moonrider.dao.converter.ExpenseConverter;
+import com.moonrider.dao.dto.ExpenseDTO;
 import com.moonrider.domain.Expense;
-import com.moonrider.dto.ExpenseDTO;
-import com.moonrider.dto.ExpenseFactory;
 
 @ApplicationScoped
 public class ExpenseDAO {
 
-	private final EntityManager em;
+	@Inject
+	private EntityManager em;
+	
+	private final ExpenseConverter expenseConverter;
 	
 	@Inject
-	ExpenseDAO(EntityManager em) {
-		this.em = em;
+	ExpenseDAO(ExpenseConverter expenseConverter) {
+		this.expenseConverter = expenseConverter;
 	}
 	
 	public List<ExpenseDTO> getExpenses() {
-		ExpenseFactory expenseFactory = new ExpenseFactory();
-		
 		List<Expense> expenses = em.createQuery("Select e FROM Expense e", Expense.class).getResultList();
-		return expenses.stream().map(expenseFactory::createExpenseDTO).collect(Collectors.toList());
+		return expenses.stream().map(expenseConverter::convert).collect(Collectors.toList());
 	}
 }
