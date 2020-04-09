@@ -20,7 +20,7 @@ public class ExpenseTrackingServiceTest {
 	@BeforeEach
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
-		expenseTrackingService = new ExpenseTrackingService(expenseDAO);
+		expenseTrackingService = new ExpenseTrackingServiceImpl(expenseDAO);
 	}
 	
 	
