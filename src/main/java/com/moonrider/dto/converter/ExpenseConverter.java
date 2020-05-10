@@ -1,10 +1,10 @@
-package com.moonrider.dao.converter;
+package com.moonrider.dto.converter;
 
 import javax.enterprise.context.Dependent;
 
-import com.moonrider.dao.dto.ExpenseDTO;
-import com.moonrider.dao.dto.ExpenseDTO.ExpenseDTOBuilder;
 import com.moonrider.domain.Expense;
+import com.moonrider.dto.ExpenseDTO;
+import com.moonrider.dto.ExpenseDTO.ExpenseDTOBuilder;
 
 @Dependent
 public class ExpenseConverter {

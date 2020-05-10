@@ -7,9 +7,9 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-import com.moonrider.dao.converter.ExpenseConverter;
-import com.moonrider.dao.dto.ExpenseDTO;
 import com.moonrider.domain.Expense;
+import com.moonrider.dto.ExpenseDTO;
+import com.moonrider.dto.converter.ExpenseConverter;
 
 @ApplicationScoped
 public class ExpenseDAO {

@@ -17,10 +17,9 @@ import javax.transaction.Transactional;
 
 import org.junit.jupiter.api.Test;
 
-
-import com.moonrider.dao.dto.ExpenseDTO;
 import com.moonrider.domain.Expense;
 import com.moonrider.domain.Expense.ExpenseBuilder;
+import com.moonrider.dto.ExpenseDTO;
 
 import io.quarkus.test.junit.QuarkusTest;
 
@@ -38,8 +37,9 @@ public class ExpensionDAOIT {
 	public void listExpenses_shouldReturn_expenses() {
 		List<ExpenseDTO> result = expenseDAO.getExpenses();
 		
-		assertThat(result, notNullValue());
+		assertThat(result.isEmpty(), is(false));
 		assertThat(result.size(), greaterThan(0));
+		assertThat(result, notNullValue());
 	}
 	
 	@Test
@@ -56,6 +56,8 @@ public class ExpensionDAOIT {
 		
 		
 		List<ExpenseDTO> result = expenseDAO.getExpenses();
+		assertThat(result.isEmpty(), is(false));
+		
 		Optional<ExpenseDTO> dtoOptional = result.stream().filter(e -> e.getExpenseId() == expenseId).findFirst();
 		
 		assertThat(dtoOptional.isPresent(), is(true));

@@ -2,7 +2,7 @@ package com.moonrider.service;
 
 import java.util.List;
 
-import com.moonrider.dao.dto.ExpenseDTO;
+import com.moonrider.dto.ExpenseDTO;
 
 public interface ExpenseTrackingService {
 

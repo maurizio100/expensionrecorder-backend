@@ -1,4 +1,4 @@
-package com.moonrider.dao.dto;
+package com.moonrider.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
